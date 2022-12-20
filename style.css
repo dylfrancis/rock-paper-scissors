@@ -73,3 +73,28 @@
   display: none;
   flex-direction: column;
 }
+
+.main-page-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  display: flex;
+  margin-left: 50%;
+  transform: translate(-50%);
+  padding: 25px 0;
+}
+
+.header img {
+  height: 60px;
+  padding: 10px 15px 10px 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
