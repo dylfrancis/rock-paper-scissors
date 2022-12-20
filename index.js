@@ -1,83 +1,29 @@
 let getComputerChoice = () => {
   const randChoice = Math.floor(Math.random() * 3);
-  const computerChoice = ["ROCK", "PAPER", "SCISSORS"];
+  const computerChoice = ["rock", "paper", "scissors"];
   return computerChoice[randChoice];
 };
 
-let singleRound = (playerSelection, computerSelection) => {
-  playerSelection = playerSelection.toUpperCase();
-  computerSelection = computerSelection.toUpperCase();
-
-  if (playerSelection === "ROCK") {
-    if (computerSelection === "ROCK") {
-      return `Tie! ${playerSelection} ties with ${computerSelection}`;
-    } else if (computerSelection === "PAPER") {
-      return `You lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection === "SCISSORS") {
-      return `You win! ${playerSelection} beats ${computerSelection}`;
-    } else {
-      return "ERROR: Computer Selection not valid.";
-    }
-  } else if (playerSelection === "PAPER") {
-    if (computerSelection === "PAPER") {
-      return `Tie! ${playerSelection} ties with ${computerSelection}`;
-    } else if (computerSelection === "SCISSORS") {
-      return `You lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection === "ROCK") {
-      return `You win! ${playerSelection} beats ${computerSelection}`;
-    } else {
-      return "ERROR: Computer Selection not valid.";
-    }
-  } else if (playerSelection === "SCISSORS") {
-    if (computerSelection === "SCISSSORS") {
-      return `Tie! ${playerSelection} ties with ${computerSelection}`;
-    } else if (computerSelection === "ROCK") {
-      return `You lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection === "PAPER") {
-      return `You win! ${playerSelection} beats ${computerSelection}`;
-    } else {
-      return "ERROR: Computer Selection not valid.";
-    }
+let checkWinner = (player1, player2) => {
+  if (
+    (player1 === "rock" && player2 === "scissors") ||
+    (player1 === "paper" && player2 === "rock") ||
+    (player1 === "scissors" && player2 === "paper")
+  ) {
+    return "player";
+  } else if (player1 === player2) {
+    return "tie";
   } else {
-    return "ERROR: user input invalid.";
+    return "computer";
   }
 };
 
-let game = () => {
-  let userScore = 0;
-  let computerScore = 0;
-
-  for (let i = 0; i < 5; i++) {
-    let userChoice = prompt("Enter rock paper or scissors!");
-    const computerChoice = getComputerChoice();
-
-    let round = singleRound(userChoice, computerChoice);
-    console.log(round);
-
-    if (
-      round === `You win! ${userChoice.toUpperCase()} beats ${computerChoice}`
-    ) {
-      userScore++;
-    } else if (
-      round === `You lose! ${computerChoice} beats ${userChoice.toUpperCase()}`
-    ) {
-      computerScore++;
-    }
-  }
-
-  if (userScore > computerScore) {
-    console.log(
-      `You win!\n\nSCORE:\nUser: ${userScore}\nComputer: ${computerScore}`
-    );
-  } else if (userScore < computerScore) {
-    console.log(
-      `You lose.\n\nSCORE:\nUser: ${userScore}\nComputer: ${computerScore}`
-    );
-  } else {
-    console.log(
-      `You tied!\n\nSCORE:\nUser: ${userScore}\nComputer: ${computerScore}`
-    );
-  }
+let playRound = (playerChoice) => {
+  // play until winner gets to 5
 };
 
-game();
+let updateScore = (playerChoice, computerChoice) => {
+  // Update score each time a round is played
+  if (checkWinner(playerChoice, computerChoice) === "player") {
+  }
+};
