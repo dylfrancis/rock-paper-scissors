@@ -69,3 +69,7 @@
 }
 
 /* Main page styling */
+.main-page {
+  display: none;
+  flex-direction: column;
+}
