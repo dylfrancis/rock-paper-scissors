@@ -13,3 +13,16 @@ const toggleVolume = document.getElementById("volume");
 toggleVolume.addEventListener("click", () => {
   toggleMute();
 });
+
+let playHoverSFX = () => {
+  const hoverSFX = document.querySelector(".hover-select-sfx");
+  hoverSFX.currentTime = 0;
+  hoverSFX.play();
+};
+
+const hoverImages = document.querySelectorAll(".player-images");
+hoverImages.forEach((hoverImage) => {
+  hoverImage.addEventListener("mouseover", () => {
+    playHoverSFX();
+  });
+});
