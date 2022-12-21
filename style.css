@@ -164,3 +164,34 @@
 .player-images:hover {
   border: 4px solid lightblue;
 }
+
+.scoreboard-container {
+  display: flex;
+  width: 880px;
+  margin-top: 24px;
+  margin-bottom: 100px;
+}
+
+.player-score,
+.computer-score,
+.tie-score {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 5px solid black;
+}
+.player-score h3,
+.computer-score h3,
+.tie-score h3 {
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+.player-score h4,
+.computer-score h4,
+.tie-score h4 {
+  font-size: 24px;
+}
